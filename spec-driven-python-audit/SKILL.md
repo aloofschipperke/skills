@@ -1,6 +1,6 @@
 ---
 name: spec-driven-python-audit
-description: > Audit spec-driven Python projects for integrity issues. Use when user asks to "audit project", "check PRD sync", "verify PLAN", "find orphan tests", or "check test coverage". Detects PRD requirements not in PLAN, PLAN items without PRD backing, tests without requirement markers, always-pass or always-fail tests, and items marked complete without tests.
+description: Audit spec-driven Python projects for integrity issues. Use when user asks to "audit project", "check PRD sync", "verify PLAN", "find orphan tests", or "check test coverage". Detects PRD requirements not in PLAN, PLAN items without PRD backing, tests without requirement markers, always-pass or always-fail tests, and items marked complete without tests.
 ---
 
 # Audit Project
