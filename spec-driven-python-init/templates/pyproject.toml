@@ -1,0 +1,45 @@
+[project]
+name = "{{PROJECT_NAME}}"
+version = "0.1.0"
+description = "{{DESCRIPTION}}"
+requires-python = ">={{PYTHON_VERSION}}"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+    "bandit[toml]>=1.7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-fail-under=85",
+]
+markers = [
+    "requirement: Links test to a PRD requirement ID",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["tests/*", "*/conftest.py"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".venv"]
+skips = ["B101"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

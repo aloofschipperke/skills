@@ -29,3 +29,8 @@ uv run bandit -r src/
 ```
 
 ## Never
+
+- ❌ Write code before tests
+- ❌ Mark PLAN items done with failing tests
+- ❌ Edit PRD during implementation
+- ❌ Implement features not in PRD
